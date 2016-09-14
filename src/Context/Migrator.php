@@ -2,8 +2,6 @@
 
 namespace Arisro\Behat\Context;
 
-use Illuminate\Support\Facades\Artisan;
-
 trait Migrator
 {
 
@@ -14,7 +12,7 @@ trait Migrator
      */
     public function migrate()
     {
-        Artisan::call('migrate');
+        app('Illuminate\Contracts\Console\Kernel')->call('migrate');
     }
 
 }
